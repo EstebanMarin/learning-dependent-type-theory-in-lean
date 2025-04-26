@@ -70,3 +70,24 @@ def G : Type → Type → Type := Prod
 #check G α      -- Type → Type
 #check G α β    -- Type
 #check G α Nat  -- Type
+
+#check Type      -- Type 1
+
+#check List
+
+universe u
+
+def L (α : Type u) : Type u := Prod α α
+
+#check L    -- Type u → Type u
+
+#check λ(x: Nat) ↦ x + 5
+#check λ(x: Nat) ↦ x + 7
+
+#check λ x => x + 8
+
+#eval (λ α => α + 5) 10
+
+
+#check λ α => λ β => α + β
+#eval (λ α => λ β => α + β) 10 20
